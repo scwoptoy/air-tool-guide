@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Tool Color-Coding System - Mockup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .color-key {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .key-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            border: 2px solid #333;
+        }
+        
+        .bullseye-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .tool-example {
+            text-align: center;
+        }
+        
+        .bullseye {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .ring-outer {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .ring-middle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+            left: 25px;
+        }
+        
+        .ring-inner {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .tool-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .tool-specs {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        /* Accessory examples - single color circles */
+        .accessory {
+            text-align: center;
+        }
+        
+        .single-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .legend {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+        
+        .shape-demo {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+        }
+        
+        .circle-shape {
+            border-radius: 50%;
+        }
+        
+        .square-shape {
+            border-radius: 0;
+        }
+        
+        .triangle-shape {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 30px solid;
+        }
+        
+        .diamond-shape {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Air Tool Color-Coding System</h1>
+    <p style="text-align: center; color: #666; font-size: 18px;">Bullseye Identification System for Tool Library Rack</p>
+
+    <div class="section">
+        <h2>System Overview</h2>
+        <div class="legend">
+            <strong>Three-Ring Bullseye (for tools):</strong>
+            <ul>
+                <li><strong>Outer Ring:</strong> Tool Category</li>
+                <li><strong>Middle Ring:</strong> Compressor Size Required</li>
+                <li><strong>Inner Ring/Shape:</strong> Drive Size or Gauge (with shape identifier)</li>
+            </ul>
+            <strong>Single Circle/Shape (for accessories):</strong>
+            <ul>
+                <li>Nails, staples, sockets, bits only show their gauge/drive identifier</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Color Key</h2>
+        
+        <h3>Outer Ring - Tool Categories</h3>
+        <div class="color-key">
+            <div class="key-item">
+                <div class="color-swatch" style="background-color: #e74c3c;"></div>
+                <span><strong>Red:</strong> Nailers & Staplers</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch" style="background-color: #f39c12;"></div>
+                <span><strong>Orange:</strong> Impact Tools</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch" style="background-color: #9b59b6;"></div>
+                <span><strong>Purple:</strong> Grinders & Sanders</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch" style="background-color: #3498db;"></div>
+                <span><strong>Blue:</strong> Drills & Ratchets</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch" style="background-color: #1abc9c;"></div>
+                <span><strong>Teal:</strong> Spray Equipment</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch" style="background-color: #95a5a6;"></div>
+                <span><strong>Gray:</strong> Specialty Tools</span>
+            </div>
+        </div>
+
+        <h3>Middle Ring - Compressor Size Requirements</h3>
+        <div class="color-key">
+            <div class="key-item">
+                <div class="color-swatch" style="background-color: #2ecc71;"></div>
+                <span><strong>Green:</strong> Small (1-3 CFM) - Pancake/Hotdog</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch" style="background-color: #f1c40f;"></div>
+                <span><strong>Yellow:</strong> Medium (3-6 CFM) - 20-30 gal</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch" style="background-color: #e67e22;"></div>
+                <span><strong>Amber:</strong> Large (6-12 CFM) - 60 gal</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch" style="background-color: #c0392b;"></div>
+                <span><strong>Dark Red:</strong> Industrial (12+ CFM) - 80+ gal</span>
+            </div>
+        </div>
+
+        <h3>Inner Ring - Drive/Gauge with Shapes</h3>
+        
+        <h4>Nailer/Stapler Gauges (Circles)</h4>
+        <div class="color-key">
+            <div class="key-item">
+                <div class="color-swatch circle-shape" style="background-color: #8e44ad;"></div>
+                <span><strong>Deep Purple Circle:</strong> 15-gauge</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch circle-shape" style="background-color: #2980b9;"></div>
+                <span><strong>Navy Circle:</strong> 16-gauge</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch circle-shape" style="background-color: #16a085;"></div>
+                <span><strong>Dark Teal Circle:</strong> 18-gauge</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch circle-shape" style="background-color: #27ae60;"></div>
+                <span><strong>Forest Green Circle:</strong> 11/12-gauge (framing)</span>
+            </div>
+        </div>
+
+        <h4>Drive Sizes (Squares)</h4>
+        <div class="color-key">
+            <div class="key-item">
+                <div class="color-swatch square-shape" style="background-color: #d35400;"></div>
+                <span><strong>Burnt Orange Square:</strong> 1/4" drive</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch square-shape" style="background-color: #c0392b;"></div>
+                <span><strong>Crimson Square:</strong> 3/8" drive</span>
+            </div>
+            <div class="key-item">
+                <div class="color-swatch square-shape" style="background-color: #7f8c8d;"></div>
+                <span><strong>Steel Gray Square:</strong> 1/2" drive</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Tool Examples (Full Bullseye)</h2>
+        <div class="bullseye-container">
+            
+            <!-- 18-Gauge Brad Nailer -->
+            <div class="tool-example">
+                <div class="bullseye">
+                    <div class="ring-outer" style="background-color: #e74c3c;"></div>
+                    <div class="ring-middle" style="background-color: #2ecc71;"></div>
+                    <div class="ring-inner circle-shape" style="background-color: #16a085;">18</div>
+                </div>
+                <div class="tool-name">18-Gauge Brad Nailer</div>
+                <div class="tool-specs">
+                    Red (Nailer) / Green (Small) / Teal Circle (18ga)
+                </div>
+            </div>
+
+            <!-- 16-Gauge Finish Nailer -->
+            <div class="tool-example">
+                <div class="bullseye">
+                    <div class="ring-outer" style="background-color: #e74c3c;"></div>
+                    <div class="ring-middle" style="background-color: #f1c40f;"></div>
+                    <div class="ring-inner circle-shape" style="background-color: #2980b9;">16</div>
+                </div>
+                <div class="tool-name">16-Gauge Finish Nailer</div>
+                <div class="tool-specs">
+                    Red (Nailer) / Yellow (Medium) / Navy Circle (16ga)
+                </div>
+            </div>
+
+            <!-- Framing Nailer -->
+            <div class="tool-example">
+                <div class="bullseye">
+                    <div class="ring-outer" style="background-color: #e74c3c;"></div>
+                    <div class="ring-middle" style="background-color: #e67e22;"></div>
+                    <div class="ring-inner circle-shape" style="background-color: #27ae60;">11</div>
+                </div>
+                <div class="tool-name">Framing Nailer</div>
+                <div class="tool-specs">
+                    Red (Nailer) / Amber (Large) / Forest Circle (11ga)
+                </div>
+            </div>
+
+            <!-- 1/2" Impact Wrench -->
+            <div class="tool-example">
+                <div class="bullseye">
+                    <div class="ring-outer" style="background-color: #f39c12;"></div>
+                    <div class="ring-middle" style="background-color: #e67e22;"></div>
+                    <div class="ring-inner square-shape" style="background-color: #7f8c8d;">½"</div>
+                </div>
+                <div class="tool-name">1/2" Impact Wrench</div>
+                <div class="tool-specs">
+                    Orange (Impact) / Amber (Large) / Gray Square (1/2")
+                </div>
+            </div>
+
+            <!-- 3/8" Air Ratchet -->
+            <div class="tool-example">
+                <div class="bullseye">
+                    <div class="ring-outer" style="background-color: #3498db;"></div>
+                    <div class="ring-middle" style="background-color: #f1c40f;"></div>
+                    <div class="ring-inner square-shape" style="background-color: #c0392b;">⅜"</div>
+                </div>
+                <div class="tool-name">3/8" Air Ratchet</div>
+                <div class="tool-specs">
+                    Blue (Ratchet) / Yellow (Medium) / Crimson Square (3/8")
+                </div>
+            </div>
+
+            <!-- Die Grinder -->
+            <div class="tool-example">
+                <div class="bullseye">
+                    <div class="ring-outer" style="background-color: #9b59b6;"></div>
+                    <div class="ring-middle" style="background-color: #e67e22;"></div>
+                    <div class="ring-inner square-shape" style="background-color: #d35400;">¼"</div>
+                </div>
+                <div class="tool-name">1/4" Die Grinder</div>
+                <div class="tool-specs">
+                    Purple (Grinder) / Amber (Large) / Orange Square (1/4" collet)
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Accessory Examples (Single Color/Shape Only)</h2>
+        <p style="color: #666; margin-bottom: 20px;">Accessories only display their gauge or drive identifier - this allows quick matching to tools</p>
+        
+        <div class="bullseye-container">
+            
+            <!-- 18ga Brads -->
+            <div class="accessory">
+                <div class="single-circle circle-shape" style="background-color: #16a085;">18</div>
+                <div class="tool-name">18-Gauge Brads</div>
+                <div class="tool-specs">Matches 18ga nailers</div>
+            </div>
+
+            <!-- 16ga Nails -->
+            <div class="accessory">
+                <div class="single-circle circle-shape" style="background-color: #2980b9;">16</div>
+                <div class="tool-name">16-Gauge Nails</div>
+                <div class="tool-specs">Matches 16ga nailers</div>
+            </div>
+
+            <!-- 15ga Nails -->
+            <div class="accessory">
+                <div class="single-circle circle-shape" style="background-color: #8e44ad;">15</div>
+                <div class="tool-name">15-Gauge Nails</div>
+                <div class="tool-specs">Matches 15ga nailers</div>
+            </div>
+
+            <!-- 1/2" Socket Set -->
+            <div class="accessory">
+                <div class="single-circle square-shape" style="background-color: #7f8c8d;">½"</div>
+                <div class="tool-name">1/2" Socket Set</div>
+                <div class="tool-specs">Matches 1/2" drive tools</div>
+            </div>
+
+            <!-- 3/8" Socket Set -->
+            <div class="accessory">
+                <div class="single-circle square-shape" style="background-color: #c0392b;">⅜"</div>
+                <div class="tool-name">3/8" Socket Set</div>
+                <div class="tool-specs">Matches 3/8" drive tools</div>
+            </div>
+
+            <!-- 1/4" Bits -->
+            <div class="accessory">
+                <div class="single-circle square-shape" style="background-color: #d35400;">¼"</div>
+                <div class="tool-name">1/4" Bits/Burrs</div>
+                <div class="tool-specs">Matches 1/4" collet tools</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Implementation Notes</h2>
+        <ul>
+            <li><strong>Labels:</strong> Print as stickers (2-3" diameter) for each tool and accessory bin</li>
+            <li><strong>Shape System:</strong> Circles = Gauges (for nailers), Squares = Drive sizes (for impact/ratchet tools)</li>
+            <li><strong>Matching:</strong> Patrons match the inner circle/square on accessories to the inner ring on tools</li>
+            <li><strong>Compressor Guide:</strong> Middle ring tells them what size compressor they need to bring/rent</li>
+            <li><strong>Quick Sort:</strong> Outer ring helps staff organize returns by category</li>
+            <li><strong>Colorblind Friendly:</strong> Shapes provide additional differentiation beyond color</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Quick Reference Chart</h2>
+        <table>
+            <tr>
+                <th>Ring Position</th>
+                <th>Information Type</th>
+                <th>Who Uses It</th>
+            </tr>
+            <tr>
+                <td>Outer (Tool)</td>
+                <td>Tool Category</td>
+                <td>Staff for organization & returns</td>
+            </tr>
+            <tr>
+                <td>Middle (Tool)</td>
+                <td>Compressor Size</td>
+                <td>Patrons for equipment planning</td>
+            </tr>
+            <tr>
+                <td>Inner (Tool & Accessory)</td>
+                <td>Gauge or Drive Size</td>
+                <td>Patrons for matching consumables/attachments</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
